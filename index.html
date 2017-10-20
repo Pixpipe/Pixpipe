@@ -6,13 +6,20 @@
 -->
 <html>
 	<head>
-		<title>Stellar by HTML5 UP</title>
+		<title>Pixpipe</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+    <style>
+    header img {
+      width: 20%;
+      border-radius: 3%;
+    }
+    </style>
 	</head>
 	<body>
 
@@ -21,19 +28,19 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="" /></span>
-						<h1>Stellar</h1>
-						<p>Just another free, fully responsive site template<br />
-						built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<span class="logo"><img src="images/org_logo_512.png" alt="" /></span>
+						<h1>Pixpipe</h1>
+						<p>Image processing pipeline in Javascript<br />
+						 Browser & Node
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro" class="active">Introduction</a></li>
-							<li><a href="#first">First Section</a></li>
-							<li><a href="#second">Second Section</a></li>
-							<li><a href="#cta">Get Started</a></li>
+							<li><a href="#install">Installation</a></li>
+							<li><a href="#getstarted">Getting Started</a></li>
+							<li><a href="#who">Who is Pixpipe?</a></li>
 						</ul>
 					</nav>
 
@@ -45,23 +52,26 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
+											<h2>Introduction</h2>
 										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
+										<p>
+                      Pixpipe.js is an attempt of building an image processing pipeline entirely in native Javascript for browsers. Its architecture was somewhat inspired by <a href="https://itk.org/" target="_blank">ITK</a>, making a clear distinction between objects that contains data from object that processes data.
+                    </p>
+                    <p>
+                      The concept of pipeline implies that the output of a <code>Filter</code> can be used as an input for the next one, like in ITK. In Pixpipe.js, this is done by using the <code>Filter</code>'s methods <code>addInput()</code> and <code>getOuput()</code>. Some filters may have several inputs, several outputs and possibly of different kinds.
+                    </p>
 										<ul class="actions">
 											<li><a href="generic.html" class="button">Learn More</a></li>
 										</ul>
 									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+									<span class="image"><img src="images/org_logo_512.png" alt="" /></span>
 								</div>
 							</section>
 
-						<!-- First Section -->
-							<section id="first" class="main special">
+						<!-- install Section -->
+							<section id="install" class="main special">
 								<header class="major">
-									<h2>Magna veroeros</h2>
+									<h2>Install Pixpipe</h2>
 								</header>
 								<ul class="features">
 									<li>
@@ -87,10 +97,10 @@
 								</footer>
 							</section>
 
-						<!-- Second Section -->
-							<section id="second" class="main special">
+						<!-- getstarted Section -->
+							<section id="getstarted" class="main special">
 								<header class="major">
-									<h2>Ipsum consequat</h2>
+									<h2>Getting started</h2>
 									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
 									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
 								</header>
@@ -125,9 +135,9 @@
 							</section>
 
 						<!-- Get Started -->
-							<section id="cta" class="main special">
+							<section id="who" class="main special">
 								<header class="major">
-									<h2>Congue imperdiet</h2>
+									<h2>Who is Pixpipe?</h2>
 									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
 									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
 								</header>
