@@ -71,12 +71,11 @@ validContentDirectories.forEach( function( folder, index ){
   
   var destPath = `${root}/${folder}`;
   var indexPath = `${root}/${folder}/index.html`;
+  deleteFolderRecursive( destPath )
   fs.mkdirSync(destPath);
   fs.mkdirSync(destPath + "/data");
   fs.writeFileSync( indexPath, fullHtml );
   copydir.sync( dataPath, destPath + "/data"  );
-  console.log( dataPath);
-  console.log(destPath + "/" + dataDirname );
 })
 
 // get the content of a file as a text
@@ -89,3 +88,18 @@ function getFileContent( path ){
   }
   return content;
 }
+
+
+function deleteFolderRecursive(path) {
+  if (fs.existsSync(path)) {
+    fs.readdirSync(path).forEach(function(file, index){
+      var curPath = path + "/" + file;
+      if (fs.lstatSync(curPath).isDirectory()) { // recurse
+        deleteFolderRecursive(curPath);
+      } else { // delete file
+        fs.unlinkSync(curPath);
+      }
+    });
+    fs.rmdirSync(path);
+  }
+};
