@@ -48,6 +48,10 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	img {
+		width: 100%;
+	}
+
 /* Box Model */
 
 	*, *:before, *:after {
@@ -1782,12 +1786,12 @@
 	}
 
 	code {
-		border-radius: 8px;
+		border-radius: 3px;
 		border: solid 1px;
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
-		padding: 0.25em 0.65em;
+		padding: 0.05em 0.25em;
 	}
 
 	pre {
@@ -3107,7 +3111,7 @@
 		}
 
 		#header.alt {
-			padding: 3em 5em 4em 5em ;
+			padding: 2em 5em 1em 5em ;
 		}
 
 			#header.alt h1 {

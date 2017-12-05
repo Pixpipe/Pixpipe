@@ -30,6 +30,10 @@ fs.readdirSync(contentFolder).forEach( function(path){
   // must NOT be hidden
   if(path[0] === ".")
     return;
+    
+  // private when start with underscore  
+  if(path[0] === "_")
+    return;
   
   // must contain a "config.json" file
   if(! fs.existsSync(dirPath + "/" + configFilename) )
@@ -51,7 +55,11 @@ validContentDirectories.forEach( function( folder, index ){
   var config = jsonfile.readFileSync(configPath);
   var templatePath = templates[ config.template ];
   
-  var templateString = getFileContent( templatePath );
+  console.log( folder );
+  console.log( index );
+  console.log( config );
+  
+  var templateString = getFileContent( templatePath ); 
   var contentString = getFileContent( contentPath );
   var isThereDataFolder = fs.existsSync( dataPath );
   
@@ -69,11 +77,18 @@ validContentDirectories.forEach( function( folder, index ){
     content: htmlContent
   });
   
-  var destPath = `${root}/${folder}`;
-  var indexPath = `${root}/${folder}/index.html`;
-  deleteFolderRecursive( destPath )
-  fs.mkdirSync(destPath);
-  fs.mkdirSync(destPath + "/data");
+  //var destPath = `${root}/${folder}`;
+  //var indexPath = `${root}/${folder}/index.html`;
+  
+  var destPath = folder === "index" ? `${root}` : `${root}/${folder}`;
+  var indexPath = `${destPath}/index.html`;
+  
+  if( folder !== "index" ){
+    deleteFolderRecursive( destPath )
+    fs.mkdirSync(destPath);
+    fs.mkdirSync(destPath + "/data");
+  }
+  
   fs.writeFileSync( indexPath, fullHtml );
   copydir.sync( dataPath, destPath + "/data"  );
 })
