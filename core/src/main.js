@@ -35,6 +35,13 @@ fs.readdirSync(contentFolder).forEach( function(path){
   if(path[0] === "_")
     return;
   
+  // these folders must not be replaced
+  if(path === "core"   ||
+     path === "assets" ||
+     path === "images")
+    return;
+
+  
   // must contain a "config.json" file
   if(! fs.existsSync(dirPath + "/" + configFilename) )
     return;
@@ -55,9 +62,11 @@ validContentDirectories.forEach( function( folder, index ){
   var config = jsonfile.readFileSync(configPath);
   var templatePath = templates[ config.template ];
   
+  /*
   console.log( folder );
   console.log( index );
   console.log( config );
+  */
   
   var templateString = getFileContent( templatePath ); 
   var contentString = getFileContent( contentPath );
