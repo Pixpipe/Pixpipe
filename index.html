@@ -8,6 +8,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <head>
   <title>Pixpipe</title>
   <meta charset="utf-8" />
+  
+  <meta name="author" content="Jonathan Lurie" />
+  <meta name="description" content="Image processing pipeline in pure Javascript" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pixpipe" />
+  <meta property="og:title" content="Pixpipe" />
+  <meta property="og:url" content="http://www.pixpipe.io/" />
+  <meta property="og:description" content="Image processing pipeline in pure Javascript" />
+  <meta property="og:image" content="http://www.pixpipe.io/images/org_logo_512.png" />
+  <meta property="og:image:secure_url" content="http://www.pixpipe.io/images/org_logo_512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pixpipe" />
+  <meta name="twitter:description" content="Image processing pipeline in pure Javascript" />
+  <meta name="twitter:image" content="http://www.pixpipe.io/images/org_logo_512.png" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -75,7 +90,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
               </p>
               
               <p>
-                Pixpipe is developed in the <a href="http://www.mcgill.ca/neuro/about">Montreal Neurological Institute</a> (MNI/Neuro), in the lab <a href="http://mcin-cnim.ca/">McGill Center for Integrative Neuroscience</a> (MCIN).
+                Pixpipe is developed in the <a href="http://www.mcgill.ca/neuro/about">Montreal Neurological Institute</a> (MNI/Neuro), in the lab <a href="http://mcin-cnim.ca/">McGill Center for Integrative Neuroscience</a> (MCIN), thus, it puts the emphasis on playing well with data from research in neuroscience.
               </p>
               
               <!--
@@ -119,7 +134,7 @@ import * as PIXPIPE from 'pixpipejs';
   <header class="major">
     <h2>Features</h2>
   </header>
-  <p>Pixpipe provides some tools and structure to create, open, process and save object from different types:</p>
+  <p>Pixpipe provides some tools and structures to create, open, process and save objects from different types:</p>
   <ul>
     <li><strong>images</strong>, such as jpeg, png, tiff (8/16bits), using <code>Image2D</code> objects</li>
     <li><strong>volumes</strong>, such as <a href="https://brainder.org/2012/09/23/the-nifti-file-format/">NIfTI</a>, <a href="https://en.wikibooks.org/wiki/MINC/SoftwareDevelopment/MINC2.0_File_Format_Reference">Minc2</a> and <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MghFormat">MGH</a>, using <code>Image3D</code> objects</li>
@@ -127,10 +142,10 @@ import * as PIXPIPE from 'pixpipejs';
     <li><strong>Meshes</strong> surface files such as <a href="http://www.bic.mni.mcgill.ca/users/mishkin/mni_obj_format.pdf">MNI OBJ</a> and soon Wavefront Obj, using <code>Mesh3D</code> objects</li>
   </ul>
   <p>One of the key features of these containers is that they are made for precise scientific computation, thus, they are using <code>float32</code> instead of <code>uint8</code> and can be composed of as many bands as required (and not only 3, like in the classic RGB).</p>
-  <p>In addition to containing data, every <em>Pixpipe type</em> can contain an infinite amount of metadata, each of them having a <em>name</em> and a <em>value</em> of any type.</p>
+  <p>In addition to containing data, every <em>Pixpipe type</em> can contain an infinite amount of metadata from various types</p>
   <p>Along these containers, some <em>filters</em> are available in order to process these data. Filters can cover very broad usage, from performing a simple threshold to applying a low pass filter in Fourier domain.<br />
-    Pixpipe is still a young project and most of the time, a new filter is created when it is necessary, so don't expect to have a OpenCV kind of diversity. But good news: adding a new filter is quite easy and <em>pull requests</em> are welcome.</p>
-    <p>Finally, a data serializer is provided, so that you can save your data on your own storage, as a file. This uses the <a href="https://github.com/Pixpipe/pixbincodec">PixBin</a> format, developed especially for the need Pixpipe. It can save any object of one of the <em>Pixpipe types</em> including data (with optional lossless compression) and metadata. Later when reading a <em>PixBin</em> file, you will find all your objects the way you left them.</p>
+    Pixpipe is still a young project and most of the time, a new filter is created when it is necessary, so don't expect to have a OpenCV kind of diversity. But good news: adding a new filter is quite easy and <em>pull requests</em> are welcome. (cf. <a href="/contribution-guide">contribution guide</a>)</p>
+    <p>Finally, a data serializer is provided, so that you can save your data on your own storage, as a file. This uses the <a href="https://github.com/Pixpipe/pixbincodec">PixBin</a> format, developed especially for the needs Pixpipe. It can save any object of the <em>Pixpipe types</em> with both data and metadata (+ optional lossless compression). Later when reading a <em>PixBin</em> file, you will find all your objects the way you left them.</p>
     
     <!--
     <footer class="major">
@@ -159,6 +174,7 @@ import * as PIXPIPE from 'pixpipejs';
           <li><code>filter</code> for all the filters (this could be arranged in a better way)</li>
           <li><code>helper</code> are like filters but the processing they provide is to help visualize data, rather that applying a scientifically relevant treatment. (ie. apply a colormap)</li>
           <li><code>io</code> for downloading/reading/writing files from the filesystem or AJAX</li>
+          <li><code>utils</code> for hosting utility classes, mostly static</li>
           <li><code>pixpipe.js</code> the main entry point where are listed all the modules</li>
         </ul>
         <li>A modular approach and a clear separation of objects.</li>

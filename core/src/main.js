@@ -80,6 +80,7 @@ validContentDirectories.forEach( function( folder, index ){
   var template = handlebars.compile( templateString );
   
   var fullHtml = template({
+    folderName: folder,
     title: config.title,
     subtitle: config.subtitle,
     image: config.image || defaultHeaderImage,
