@@ -82,7 +82,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 <h2>Introduction</h2>
               </header>
               <p>
-                Pixpipe.js is an attempt of building an image processing pipeline entirely in native Javascript for browsers. Its architecture is somewhat inspired by <a href="https://itk.org/" target="_blank">ITK</a>, making a clear distinction between objects that contains data from objects that process data.
+                Pixpipe.js is an attempt to build an image processing pipeline entirely in native Javascript for browsers. Its architecture is somewhat inspired by <a href="https://itk.org/" target="_blank">ITK</a>, making a clear distinction between objects that contain data and objects that process data.
               </p>
               <p>The motivation at the origin of the project is mainly to bring image processing to every web-browser so that interactive tools do not have to reinvent the wheel when they need such pipeline.</p>
               <p>
@@ -90,7 +90,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
               </p>
               
               <p>
-                Pixpipe is developed in the <a href="http://www.mcgill.ca/neuro/about">Montreal Neurological Institute</a> (MNI/Neuro), in the lab <a href="http://mcin-cnim.ca/">McGill Center for Integrative Neuroscience</a> (MCIN), thus, it puts the emphasis on playing well with data from research in neuroscience.
+                Pixpipe is being developed at the <a href="http://www.mcgill.ca/neuro/about">Montreal Neurological Institute</a> (MNI/Neuro), in the lab <a href="http://mcin-cnim.ca/">McGill Center for Integrative Neuroscience</a> (MCIN), thus, it puts the emphasis on playing well with data from research in neuroscience.
               </p>
               
               <!--
@@ -144,7 +144,7 @@ import * as PIXPIPE from 'pixpipejs';
   <p>One of the key features of these containers is that they are made for precise scientific computation, thus, they are using <code>float32</code> instead of <code>uint8</code> and can be composed of as many bands as required (and not only 3, like in the classic RGB).</p>
   <p>In addition to containing data, every <em>Pixpipe type</em> can contain an infinite amount of metadata from various types</p>
   <p>Along these containers, some <em>filters</em> are available in order to process these data. Filters can cover very broad usage, from performing a simple threshold to applying a low pass filter in Fourier domain.<br />
-    Pixpipe is still a young project and most of the time, a new filter is created when it is necessary, so don't expect to have a OpenCV kind of diversity. But good news: adding a new filter is quite easy and <em>pull requests</em> are welcome. (cf. <a href="/contribution-guide">contribution guide</a>)</p>
+    Pixpipe is still a young project and most of the time, a new filter is created when it is necessary, so don't expect to have an OpenCV kind of diversity. But good news: adding a new filter is quite easy and <em>pull requests</em> are welcome. (cf. <a href="/contribution-guide">contribution guide</a>)</p>
     <p>Finally, a data serializer is provided, so that you can save your data on your own storage, as a file. This uses the <a href="https://github.com/Pixpipe/pixbincodec">PixBin</a> format, developed especially for the needs Pixpipe. It can save any object of the <em>Pixpipe types</em> with both data and metadata (+ optional lossless compression). Later when reading a <em>PixBin</em> file, you will find all your objects the way you left them.</p>
     
     <!--
@@ -196,7 +196,7 @@ import * as PIXPIPE from 'pixpipejs';
 <!-- overview Section -->
 <section id="resources" class="main">
   <header class="major">
-    <h2>Ressources</h2>
+    <h2>Resources</h2>
   </header>
   <p>In addition to the <a href="https://github.com/Pixpipe/pixpipejs">repository on Github</a>, you can use the <a href="cookbook">Cookbook</a> for an in-depth understanding of how Pixpipe works. It also contains a lot of <a href="cookbook/#learningwithexamples">examples</a> and even more are to come!  </p>
   <p>Some modules were developed for Pixpipe but can also be used independently, you can find them on the <a href="https://github.com/Pixpipe">Github organization</a>. For example, the <em>PixBin</em> serialization format in-depth description can be found <a href="https://github.com/Pixpipe/pixbincodec/blob/master/pixbinformat.md">here</a>.  </p>
