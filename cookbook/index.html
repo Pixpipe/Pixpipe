@@ -8,7 +8,7 @@
   <head>
     <title>Pixpipe::Cookbook</title>
     <meta charset="utf-8" />
-    
+
     <meta name="author" content="Jonathan Lurie" />
     <meta name="description" content="Image processing pipeline in pure Javascript" />
     <meta property="og:type" content="website" />
@@ -22,13 +22,13 @@
     <meta name="twitter:title" content="Pixpipe" />
     <meta name="twitter:description" content="Image processing pipeline in pure Javascript" />
     <meta name="twitter:image" content="http://www.pixpipe.io/images/org_logo_512.png" />
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="../assets/css/main.css" />
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <style>
@@ -42,6 +42,16 @@
     }
 
     </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110948661-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110948661-1');
+    </script>
   </head>
   <body>
 
@@ -195,7 +205,7 @@ For example, say you need a datastructure that needs 1D measurement (like a <cod
 The <code>Mesh3D</code> class is a good example of usage of <code>PixpipeContainerMultiData</code>. An instance of <code>Mesh3D</code> represents a mesh, in 3D, aka a surface. To serve this purpose, it stores <strong>four</strong> types of data:</p>
 <ul>
 <li>the vertex positions, as an array of <code>[x0, y0, z0, x1, y1, z1, ...]</code> (<code>Float32Array</code>)</li>
-<li>the list of each each vertex index grouped by 3 (if faces are triangles) such as <code>[Va0, Va1, Va2, Vb0, Vb1, Vb2, ...]</code> where <code>a</code> is the first triangle, <code>b</code> is the second…  (<code>Uint32Array</code>)</li>
+<li>the list of each each vertex index grouped by 3 (if faces are triangles) such as <code>[Va0, Va1, Va2, Vb0, Vb1, Vb2, ...]</code> where <code>a</code> is the first triangle, <code>b</code> is the second...  (<code>Uint32Array</code>)</li>
 <li>the polygons/triangles' normal vectors <code>[x0, y0, z0, x1, y1, z1, ...]</code>. Even though those could be computed with a cross product using a <em>right hand</em> rule, it can be convenient the list them in case all the faces don't follow this rule. (<code>Float32Array</code>)</li>
 <li>the vertex colors as a list of RGBa such as <code>[V0R, V0G, V0G, V0a, V1R, V1G, V1B, V1a, ...]</code> (<code>Uint8Array</code>)
 Each of these structure can be set from dedicated methods and you should not have to deal with low level private arrays.</li>
@@ -806,7 +816,7 @@ console.log("The whole thing took " + t + " millisec.");
           </div>
 
         <!-- Footer -->
-        
+
         <!-- Footer -->
         <footer id="footer">
           <section>

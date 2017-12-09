@@ -8,7 +8,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <head>
   <title>Pixpipe</title>
   <meta charset="utf-8" />
-  
+
   <meta name="author" content="Jonathan Lurie" />
   <meta name="description" content="Image processing pipeline in pure Javascript" />
   <meta property="og:type" content="website" />
@@ -22,33 +22,45 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
   <meta name="twitter:title" content="Pixpipe" />
   <meta name="twitter:description" content="Image processing pipeline in pure Javascript" />
   <meta name="twitter:image" content="http://www.pixpipe.io/images/org_logo_512.png" />
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
   <link rel="stylesheet" href="assets/css/main.css" />
   <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
   <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-  
+
   <style>
   header img {
     width: 20%;
     border-radius: 3%;
   }
-  
+
   #pipe-intro {
     border: none;
   }
-  
+
   #pipe-intro img {
     border-radius: 0;
   }
   </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110948661-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-110948661-1');
+  </script>
+
+
 </head>
 <body>
-  
+
   <!-- Wrapper -->
   <div id="wrapper">
-    
+
     <!-- Header -->
     <header id="header" class="alt">
       <span class="logo"><img src="images/org_logo_512.png" alt="" /></span>
@@ -58,7 +70,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <a href="https://github.com/Pixpipe/pixpipejs" class="icon fa-github alt"></a>
       </p>
       </header>
-      
+
       <!-- Nav -->
       <nav id="nav">
         <ul>
@@ -70,10 +82,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
           <!--<li><a href="#developers">Developers</a></li>-->
         </ul>
       </nav>
-      
+
       <!-- Main -->
       <div id="main">
-        
+
         <!-- Introduction -->
         <section id="intro" class="main">
           <div class="spotlight">
@@ -88,11 +100,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
               <p>
                 The concept of pipeline implies that the output of a <code>Filter</code> can be used as an input for the next one, like in ITK. In Pixpipe.js, this is done by using the <code>Filter</code>'s methods <code>addInput()</code> and <code>getOuput()</code>. Some filters may have several inputs, several outputs and possibly of different kinds.
               </p>
-              
+
               <p>
                 Pixpipe is being developed at the <a href="http://www.mcgill.ca/neuro/about">Montreal Neurological Institute</a> (MNI/Neuro), in the lab <a href="http://mcin-cnim.ca/">McGill Center for Integrative Neuroscience</a> (MCIN), thus, it puts the emphasis on playing well with data from research in neuroscience.
               </p>
-              
+
               <!--
               <ul class="actions">
               <li><a href="generic.html" class="button">Learn More</a></li>
@@ -102,14 +114,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <span id="pipe-intro" class="image"><img src="images/pipe_1000.png" alt="" /></span>
       </div>
     </section>
-    
+
     <!-- install Section -->
     <section id="install" class="main">
-      
+
       <header class="major">
         <h2>Install Pixpipe</h2>
       </header>
-      
+
       <p>Like most Javascript projects, installing Pipipe is quite easy:</p>
       <pre><code># in a npm Javascript project
 $ npm install pixpipe/pixpipejs
@@ -119,7 +131,7 @@ $ npm install pixpipe/pixpipejs
 import * as PIXPIPE from 'pixpipejs';
 </code></pre>
       <p>and use the <code>PIXPIPE</code> module to address all the classes and objects, just like in <code>var myImage = PIXPIPE.Image2D();</code></p>
-      
+
       <!--
       <footer class="major">
       <ul class="actions">
@@ -146,7 +158,7 @@ import * as PIXPIPE from 'pixpipejs';
   <p>Along these containers, some <em>filters</em> are available in order to process these data. Filters can cover very broad usage, from performing a simple threshold to applying a low pass filter in Fourier domain.<br />
     Pixpipe is still a young project and most of the time, a new filter is created when it is necessary, so don't expect to have an OpenCV kind of diversity. But good news: adding a new filter is quite easy and <em>pull requests</em> are welcome. (cf. <a href="/contribution-guide">contribution guide</a>)</p>
     <p>Finally, a data serializer is provided, so that you can save your data on your own storage, as a file. This uses the <a href="https://github.com/Pixpipe/pixbincodec">PixBin</a> format, developed especially for the needs Pixpipe. It can save any object of the <em>Pixpipe types</em> with both data and metadata (+ optional lossless compression). Later when reading a <em>PixBin</em> file, you will find all your objects the way you left them.</p>
-    
+
     <!--
     <footer class="major">
       <ul class="actions">
@@ -157,8 +169,8 @@ import * as PIXPIPE from 'pixpipejs';
     </footer>
     -->
   </section>
-  
-  
+
+
   <!-- overview Section -->
   <section id="overview" class="main">
     <header class="major">
